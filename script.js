@@ -82,10 +82,6 @@ function closeModal() {
     document.getElementById('modal').classList.add('hidden');
 }
 
-function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
-}
-
 // Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
