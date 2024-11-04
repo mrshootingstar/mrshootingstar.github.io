@@ -3,75 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe | Software Engineer</title>
+    <title>Your Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    .hero-font { font-family: 'Playfair Display', serif; }
+    .body-font { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-slate-50">
+<body class="body-font">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Main nav -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-gray-600 border-b-2 border-black">Home</a>
+                    <a href="#blog" class="hover:text-gray-600">Blog</a>
+                    <a href="#about" class="hover:text-gray-600">About</a>
+                    <a href="#projects" class="hover:text-gray-600">Projects & Open Source</a>
+                    <a href="#library" class="hover:text-gray-600">Library</a>
+                    <a href="#hobbies" class="hover:text-gray-600">Hobbies</a>
+                </div>
+                <!-- Social Icons -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="https://github.com" target="_blank" class="hover:text-gray-600">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="hover:text-gray-600">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-gray-600">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block hover:text-gray-600">Home</a>
+                <a href="#blog" class="block hover:text-gray-600">Blog</a>
+                <a href="#about" class="block hover:text-gray-600">About</a>
+                <a href="#projects" class="block hover:text-gray-600">Projects & Open Source</a>
+                <a href="#library" class="block hover:text-gray-600">Library</a>
+                <a href="#hobbies" class="block hover:text-gray-600">Hobbies</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <div class="container mx-auto px-4 py-16">
-        <!-- Profile Section -->
-        <div class="text-center mb-16">
-            <img src="/api/placeholder/800/400" alt="Hero Image" class="w-full max-w-3xl mx-auto rounded-lg shadow-lg mb-8">
-            <h1 class="text-5xl font-bold text-slate-800 mb-4">John Doe</h1>
-            <p class="text-2xl text-slate-600 mb-6">Software Engineer</p>
-            
-            <!-- Social Links -->
-            <div class="flex justify-center space-x-6">
-                <a href="mailto:john@example.com" class="text-slate-600 hover:text-blue-500 transition-colors">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
-                <a href="https://linkedin.com/in/johndoe" target="_blank" class="text-slate-600 hover:text-blue-500 transition-colors">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="https://github.com/johndoe" target="_blank" class="text-slate-600 hover:text-blue-500 transition-colors">
-                    <i class="fab fa-github text-2xl"></i>
-                </a>
+    <section id="home" class="relative h-screen">
+        <div class="absolute inset-0">
+            <img src="https://placebear.com/1600/500" alt="Hero Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="relative flex flex-col items-center justify-center h-full text-white">
+            <img src="https://avatar.iran.liara.run/public/45" alt="Avatar" class="w-32 h-32 rounded-full mb-8 border-4 border-white">
+            <h1 class="hero-font text-5xl mb-4">Your Name</h1>
+            <p class="text-xl">Software Engineer & Photographer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="hero-font text-4xl mb-8 text-center">About Me</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Your biography and introduction goes here. Share your story, expertise, and passions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="hero-font text-4xl mb-12 text-center">Projects & Open Source</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card Template -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="/api/placeholder/400/200" alt="Project Preview" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Name</h3>
+                        <p class="text-gray-600 mb-4">Brief project description goes here.</p>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tech Stack</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Projects Section -->
-        <div class="max-w-4xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="/api/placeholder/400/200" alt="Project 1" class="w-full rounded-lg mb-4">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Project One</h3>
-                    <p class="text-slate-600">A brief description of your first project. What technologies did you use? What problems did you solve?</p>
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="hero-font text-4xl mb-12 text-center">Hobbies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onclick="showModal('photography')">
+                    <img src="https://placebear.com/400/200" alt="Photography" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Photography</h3>
+                        <p class="text-gray-600">Explore my photography collection.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="/api/placeholder/400/200" alt="Project 2" class="w-full rounded-lg mb-4">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Project Two</h3>
-                    <p class="text-slate-600">A brief description of your second project. What technologies did you use? What problems did you solve?</p>
-                </div>
+                <!-- Add more hobbies here -->
             </div>
         </div>
+    </section>
 
-        <!-- Hobbies Section -->
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">Hobbies & Interests</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-camera text-4xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Photography</h3>
-                    <p class="text-slate-600">Capturing moments and exploring visual storytelling</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-hiking text-4xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Hiking</h3>
-                    <p class="text-slate-600">Exploring trails and enjoying nature's beauty</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-book text-4xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Reading</h3>
-                    <p class="text-slate-600">Science fiction and technical books enthusiast</p>
-                </div>
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg overflow-hidden max-w-3xl w-full">
+            <div class="p-4 flex justify-between items-center">
+                <h3 class="text-xl font-semibold">Photography Gallery</h3>
+                <button onclick="closeModal()" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="gallery-container" class="flex transition-transform duration-300 ease-in-out">
+                <!-- Gallery images will be loaded here via JavaScript -->
+            </div>
+            <div class="flex justify-between p-4">
+                <button onclick="prevImage()" class="bg-gray-200 p-2 rounded hover:bg-gray-300">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextImage()" class="bg-gray-200 p-2 rounded hover:bg-gray-300">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
 
-    <footer class="text-center py-8 text-slate-600">
-        <p>© 2024 John Doe. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-2">Get in touch</h3>
+                    <p class="text-gray-400">Feel free to reach out for collaborations or just a friendly hello</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-400"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="hover:text-gray-400"><i class="fab fa-linkedin text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
