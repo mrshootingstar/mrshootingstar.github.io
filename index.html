@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-    .hero-font { font-family: 'Playfair Display', serif; }
-    .body-font { font-family: 'Inter', sans-serif; }
+        .hero-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .body-font {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
+
 <body class="body-font">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
@@ -20,10 +29,8 @@
                 <!-- Main nav -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="hover:text-gray-600 border-b-2 border-black">Home</a>
-                    <a href="#blog" class="hover:text-gray-600">Blog</a>
                     <a href="#about" class="hover:text-gray-600">About</a>
-                    <a href="#projects" class="hover:text-gray-600">Projects & Open Source</a>
-                    <a href="#library" class="hover:text-gray-600">Library</a>
+                    <a href="#projects" class="hover:text-gray-600">Projects</a>
                     <a href="#hobbies" class="hover:text-gray-600">Hobbies</a>
                 </div>
                 <!-- Social Icons -->
@@ -64,7 +71,8 @@
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
         <div class="relative flex flex-col items-center justify-center h-full text-white">
-            <img src="https://avatar.iran.liara.run/public/45" alt="Avatar" class="w-32 h-32 rounded-full mb-8 border-4 border-white">
+            <img src="https://avatar.iran.liara.run/public/45" alt="Avatar"
+                class="w-32 h-32 rounded-full mb-8 border-4 border-white">
             <h1 class="hero-font text-5xl mb-4">Your Name</h1>
             <p class="text-xl">Software Engineer & Photographer</p>
         </div>
@@ -105,14 +113,35 @@
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="hero-font text-4xl mb-12 text-center">Hobbies</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onclick="showModal('photography')">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                    onclick="showModal('photography')">
                     <img src="https://placebear.com/400/200" alt="Photography" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Photography</h3>
                         <p class="text-gray-600">Explore my photography collection.</p>
                     </div>
                 </div>
-                <!-- Add more hobbies here -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onclick="showModal('juggle')">
+                    <img src="https://placebear.com/400/200" alt="Juggle" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Juggle</h3>
+                        <p class="text-gray-600">Discover my juggling skills.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onclick="showModal('music')">
+                    <img src="https://placebear.com/400/200" alt="Music" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Music</h3>
+                        <p class="text-gray-600">Listen to my musical creations.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer" onclick="showModal('improv')">
+                    <img src="https://placebear.com/400/200" alt="Improv Comedy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Improv Comedy</h3>
+                        <p class="text-gray-600">Enjoy my improv comedy acts.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -162,4 +191,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

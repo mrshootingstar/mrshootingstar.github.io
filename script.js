@@ -49,10 +49,37 @@ function prevImage() {
 
 // Modal functionality
 function showModal(hobby) {
-    if (hobby === 'photography') {
-        loadGallery();
+    const modal = document.getElementById('modal');
+    const galleryContainer = document.getElementById('gallery-container');
+    const modalTitle = modal.querySelector('h3');
+
+    switch (hobby) {
+        case 'photography':
+            loadGallery();
+            modalTitle.textContent = 'Photography Gallery';
+            break;
+        case 'juggle':
+            galleryContainer.innerHTML = '<p class="p-6">Check out my juggling skills!</p>';
+            modalTitle.textContent = 'Juggling';
+            break;
+        case 'music':
+            galleryContainer.innerHTML = '<p class="p-6">Listen to my music tracks!</p>';
+            modalTitle.textContent = 'Music';
+            break;
+        case 'improv':
+            galleryContainer.innerHTML = '<p class="p-6">Watch my improv comedy performances!</p>';
+            modalTitle.textContent = 'Improv Comedy';
+            break;
+        default:
+            galleryContainer.innerHTML = '';
+            modalTitle.textContent = '';
     }
-    document.getElementById('modal').classList.remove('hidden');
+
+    modal.classList.remove('hidden');
+}
+
+function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
 }
 
 function closeModal() {
